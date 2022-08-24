@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import PpAgent
+from .models import PpAgent, PricingModel
 # 1 Serializer
 class PpAgentSerializer(serializers.Serializer):
     surname = serializers.CharField(max_length=30)
@@ -22,4 +22,7 @@ class PpAgentModelSerializer(serializers.ModelSerializer):
         model = PpAgent
         fields = ['id', 'surname', 'last_name']
 
-        
+class PricingModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PricingModel
+        fields = ['name', 'base_fare', 'cancellation_fee', 'is_active']
