@@ -19,3 +19,7 @@ class PricingModel(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}"
+
+class Discounts(models.Model):
+    rate = models.FloatField(validators=[MinValueValidator(0)])
+    vale = models.FloatField()
