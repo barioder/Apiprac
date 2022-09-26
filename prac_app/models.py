@@ -23,3 +23,5 @@ class PricingModel(models.Model):
 class Discounts(models.Model):
     rate = models.FloatField(validators=[MinValueValidator(0)])
     vale = models.FloatField()
+    class Meta:
+        verbose_name_plural = "Discounts"

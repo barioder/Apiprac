@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from .models import PpAgent
+from .models import PpAgent, PricingModel
 
 from .serializers import PpAgentSerializer, PpAgentModelSerializer
 from django.http import HttpResponse, JsonResponse
