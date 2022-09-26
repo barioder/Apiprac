@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from .models import PpAgent, PricingModel
+from .models import PpAgent, PricingModel, DiscountsModel
 
-from .serializers import PpAgentSerializer, PpAgentModelSerializer
+from .serializers import PpAgentSerializer, PpAgentModelSerializer, DiscountsModelSerializer
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 
@@ -12,7 +12,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-
+# viewsets imports
+from rest_framework import viewsets
+from django.shortcuts import get_object_or_404
 from rest_framework import generics, mixins
 
 @csrf_exempt 
@@ -132,6 +134,39 @@ class ClassViewAgentDetails(APIView):
         agent.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+# view sets and routers
+class DiscountsViewSet(viewsets.ViewSet):
+    def list(self, request):
+        discounts_list = DiscountsModel.objects.all()
+        serializer = DiscountsModelSerializer(discounts_list, many=True)
+        return Response(serializer.data)
+
+    def create(self, request):
+        serializer = DiscountsModelSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def retrieve(self, request, pk=None):
+        queryset = DiscountsModel.objects.all()
+        discount = get_object_or_404(queryset, pk=pk)
+        serializer = DiscountsModelSerializer(discount)
+        return Response(serializer.data)
+
+    def update(self, request, pk=None):
+        discount = DiscountsModel.objects.get(pk=pk)
+        serializer = DiscountsModelSerializer(discount, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
+
+
+    
 # genericApiviews with mixins 
 
 class GenericApiView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin,
