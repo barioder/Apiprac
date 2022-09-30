@@ -26,12 +26,13 @@ result = swap_case(our_word)
 
 print(result)
 
+
 # split and join a string 
 
 word ="This is our word"
 
 word = word.split(" ")
-
+print(word)
 joined = "-".join(word)
 
 print("This is joined by -", joined)
@@ -39,3 +40,18 @@ print("This is joined by -", joined)
 joined2 = '@'.join(word)
 
 print('This is joined by @', joined2)
+
+word, *balance = "words to work with".split(" ")
+
+print(word, balance)
+
+word, *balance = "wordonlymm".split(" ")
+
+print(word, balance)
+
+if len(balance) == 0:
+    print("0000000")
+
+if balance == 1:
+    print("0000000")
+
