@@ -52,6 +52,19 @@ print(word, balance)
 if len(balance) == 0:
     print("0000000")
 
-if balance == 1:
-    print("0000000")
 
+# edit string 
+
+def change_value(string_value, position, item):
+    list_value = list(string_value)
+    list_value[position] = item
+    result = "".join(list_value)
+    return  result
+
+string = "ABCDSFGHI"
+pos = 4
+value = "E"
+
+result = change_value(string, pos, value)
+
+print(result)
