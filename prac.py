@@ -68,3 +68,39 @@ value = "E"
 result = change_value(string, pos, value)
 
 print(result)
+
+# finding 
+
+word = 'forwardandfowardward'
+sub_string = 'ward'
+
+print(word.find(sub_string))
+print(word.find("word"))
+def count(string, sub_string):
+    indexs = []
+    value_1 = string.find(sub_string)
+    if value_1 != -1:
+        indexs.append(value_1)
+        sub_length = len(sub_string)
+        new_start = value_1 + (sub_length)
+        value_2 = string[new_start:].find(sub_string)
+        if value_2 != -1:
+            indexs.append(value_2)
+
+            return len(indexs)
+
+        return len(index)
+    
+
+    return 0
+
+result = count(word, sub_string)
+result1 = count("word", "nowardstouse")
+
+print(result)
+
+print(result1)
+
+
+
+
