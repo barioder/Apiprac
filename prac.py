@@ -103,4 +103,54 @@ print(result1)
 
 
 
+word = "EEEEWhat is the   way to HAVE WORK DONEEEEEEEE"
 
+word_2 = word.rstrip('E')
+word_3 = word.lstrip("E")
+word_4 = word.strip("E")
+print(word_2)
+print(word_3)
+print(word_4)
+
+n = 3
+try_list = []
+while n != -1:
+    try_list.append("i")
+    n -= 1
+
+print(try_list)
+
+
+# def count2(string, substring):
+
+#     string_len = len(string)
+    
+#     if string.find(substring) != -1:
+#         for i in range(0, string_len):
+#             start = i
+#             string
+
+# counting the number of sub strings in a string
+def count2(string, sub_string):
+
+    n = 0
+    while sub_string in string:
+        new = string.find(sub_string) + len(sub_string)
+        string = string[new:]
+        n += 1
+
+    return n
+    # for i in range(0, string_len):
+    #     start = i
+    #     result = string[i:].find(sub_string)
+    #     if result != -1:
+    #         n += 1
+
+word = 'forwardandfowardwardkihhhward'
+sub_string = 'ward'
+result = count2(word, sub_string)
+
+print(result)
+
+if sub_string in word:
+    print('yahhh')
