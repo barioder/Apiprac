@@ -154,3 +154,16 @@ print(result)
 
 if sub_string in word:
     print('yahhh')
+
+
+def sub_string(string, sub_str):
+    n = 0
+    for i in range(0, len(string)):
+        if string[i: i+len(sub_str)] == sub_str:
+            print(i, i+len(sub_str))
+            n += 1
+    return f"The substring exists {n} times"
+
+
+result = sub_string("thewordweusearewords", "word")
+print(result)
