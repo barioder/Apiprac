@@ -2,8 +2,8 @@
 
 word = "aBc123"
 word2 = "aBc123#"
-# check if all are alpanumeric(a-z, A-Z and 0-9)
 
+# check if all are alpanumeric(a-z, A-Z and 0-9)
 result = word.isalnum()
 result2 = word2.isalnum()
 print(result)
@@ -42,4 +42,29 @@ result2 = word2.islower()
 print(result)
 print(result2)
 
+print('------any func-------')
+#  any() function returns true if an iterable has any item ("False" is not an item)
 
+list1 = [123, 4588, 1551, 55]
+list2 = []
+print(any(list1), "Has data")
+print(any(list2), "Has no data")
+
+# False is not an item
+value = [False, False, False]
+
+print(any(value))
+
+value2 = [False, False, True]
+
+print(any(value2))
+
+word = "Arsenal"
+list = [i.islower() for i in word ]
+
+print(list)
+
+
+print(any([i.isupper() for i in word]))
+print(any([i.isdigit() for i in word]))
+print(any([i.isalnum() for i in word]))
