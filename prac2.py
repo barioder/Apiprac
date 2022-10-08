@@ -64,6 +64,7 @@ list = [i.islower() for i in word ]
 
 print(list)
 
+
 print(any([i.isupper() for i in word]))
 print(any([i.isdigit() for i in word]))
 print(any([i.isalnum() for i in word]))
