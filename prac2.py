@@ -68,3 +68,26 @@ print(list)
 print(any([i.isupper() for i in word]))
 print(any([i.isdigit() for i in word]))
 print(any([i.isalnum() for i in word]))
+
+
+# Text Alignment 
+print("---------Text Alignment-----------")
+
+text = "Text to Align" 
+width = 100
+
+# Aligned left
+
+result = text.ljust(100, "-")
+
+print(result)
+
+# Aligned right 
+
+result = text.rjust(width, '-')
+print(result)
+
+#  center Aligned
+
+result = text.center(width)
+print(result)
