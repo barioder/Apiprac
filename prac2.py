@@ -91,3 +91,18 @@ print(result)
 
 result = text.center(width)
 print(result)
+
+import random
+
+def pick(x):
+    y = random.randint(0, 10)
+    if x == y:
+        return "You Got the win"
+    else:
+        return f"{y} it was Please try again"
+
+input_value = int(input("Guess a value between 0 and 10 the computer gets and win: "))
+
+result = pick(input_value)
+
+print(result)
