@@ -106,3 +106,5 @@ input_value = int(input("Guess a value between 0 and 10 the computer gets and wi
 result = pick(input_value)
 
 print(result)
+
+print("jjjjj")
