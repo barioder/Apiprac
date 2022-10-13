@@ -106,3 +106,19 @@ input_value = int(input("Guess a value between 0 and 10 the computer gets and wi
 result = pick(input_value)
 
 print(result)
+
+
+
+slot_list = []
+element = []
+pitch = input("Please select a Pitch A or B: ")
+team = input("Enter your team name ")
+position = input("Select a position ")
+
+
+element.append(pitch)
+element.append(team)
+element.append(position)
+
+slot_list.append(element)
+print(element)
