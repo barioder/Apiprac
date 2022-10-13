@@ -107,4 +107,18 @@ result = pick(input_value)
 
 print(result)
 
-print("jjjjj")
+
+
+slot_list = []
+element = []
+pitch = input("Please select a Pitch A or B: ")
+team = input("Enter your team name ")
+position = input("Select a position ")
+
+
+element.append(pitch)
+element.append(team)
+element.append(position)
+
+slot_list.append(element)
+print(element)
