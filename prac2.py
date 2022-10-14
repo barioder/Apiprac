@@ -122,3 +122,33 @@ element.append(position)
 
 slot_list.append(element)
 print(element)
+
+# text wrap string with a length of 4
+
+string = "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
+len_of_string = len(string)
+print(len_of_string)
+length = 4
+output = []
+x = 0
+y = 0
+while x < len_of_string:
+    output.append(string[x])
+    
+    x += 1
+    y += 1
+    if y == 4:
+        output.append("\n")
+        y = 0
+    
+    
+
+print("".join(output))       
+
+
+# joining elements into a string from a list(all elements need be string instances)
+
+list = ["a", "b", "c"]
+
+string = "".join(list)
+print(string)
