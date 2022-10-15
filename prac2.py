@@ -146,6 +146,23 @@ while x < len_of_string:
 print("".join(output))       
 
 
+#  text wrap with a function 
+
+import textwrap
+def wraptext(text, max_width):
+    wrapped_text = textwrap.TextWrapper(width=max_width)
+    return wrapped_text.wrap(text) # returns a list of the text sliced according to width value
+
+string = "ABCDEFGHIJKLIMNOQRSTUVWXYZ"
+width_value = 5
+
+test_1 = wraptext(string, width_value)
+
+print(test_1)
+
+final_result = "\n".join(test_1)
+print(final_result)
+
 # joining elements into a string from a list(all elements need be string instances)
 
 list = ["a", "b", "c"]
