@@ -169,3 +169,17 @@ list = ["a", "b", "c"]
 
 string = "".join(list)
 print(string)
+
+#  Handlig Exceptions 
+
+value_1 = int(input('Enter the 1st number '))
+value_2 = int(input('Enter the 2nd number '))
+
+try:
+    result = value_1/value_2
+
+except ZeroDivisionError:
+    print("Please make sure value_2 is not 0")
+
+else:
+    print(f'The answer is {result}')
