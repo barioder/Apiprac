@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+import uuid
+
 # Create your models here.
 class PpAgent(models.Model):
     surname = models.CharField(max_length=30)
@@ -25,3 +27,12 @@ class DiscountsModel(models.Model):
     vale = models.FloatField()
     class Meta:
         verbose_name_plural = "Discounts"
+
+class PhoneModel(models.Model):
+    phone_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    phone_name = models.CharField(max_length=30)
+    make = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.phone_name} {self.phone_id}'
+
