@@ -33,8 +33,10 @@ class PhoneModel(models.Model):
     phone_name = models.CharField(max_length=30)
     make = models.CharField(max_length=30)
     number_of_buttons = models.IntegerField(default=5)
-
-
+    
+    date_added = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    
     def __str__(self):
         return f'{self.phone_name} {self.phone_id}'
 
