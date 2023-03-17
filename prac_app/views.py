@@ -8,7 +8,8 @@ from .serializers import PpAgentSerializer, PpAgentModelSerializer, DiscountsMod
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
@@ -135,6 +136,7 @@ class ClassViewAgentDetails(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 # view sets and routers
+@permission_classes([IsAuthenticated])
 class DiscountsViewSet(viewsets.ViewSet):
     def list(self, request):
         discounts_list = DiscountsModel.objects.all()
