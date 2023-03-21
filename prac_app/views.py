@@ -97,7 +97,7 @@ def api_view_pp_Agent(request, id):
         return Response(status=status.HTTP_205_RESET_CONTENT)
 
 # class based API views
-
+@permission_classes([IsAuthenticated])
 class ClassViewPpAgent(APIView):
     def get(self, request):
         agents = PpAgent.objects.all()
